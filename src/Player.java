@@ -9,7 +9,7 @@ public class Player extends Character{
     {
         super(100,50,0,0);
         Random numGen = new Random();
-        this.setSpd(numGen.nextInt(0,50));
+        this.setSpd(numGen.nextInt(0,50+1));
         this.setEmpower(0);
         this.setName(name);
         this.setFled(false);
@@ -31,10 +31,10 @@ public class Player extends Character{
     public void basicAttack(Enemy enemy)
     {
         Random numGen = new Random();
-        if(numGen.nextInt(0,100)<80)
+        if(numGen.nextInt(0,100+1)<80)
         {
             int min = 5+this.getEmpower(), max = 10+2*this.getEmpower();
-            int damage = numGen.nextInt(min, max) - enemy.getDef();
+            int damage = numGen.nextInt(min, max+1) - enemy.getDef();
             if(damage<0) damage=0;
             int enemyHP = enemy.getHP() - damage;
             enemy.setDef(0);
@@ -65,7 +65,7 @@ public class Player extends Character{
         {
             this.setMP(this.getMP()-6);
             int min = 10+this.getEmpower(), max = 25+2*this.getEmpower();
-            int damage = numGen.nextInt(min, max) - enemy.getDef();
+            int damage = numGen.nextInt(min, max+1) - enemy.getDef();
             if(damage<0) damage=0;
             int enemyHP = enemy.getHP() - damage;
             enemy.setDef(0);
@@ -91,7 +91,7 @@ public class Player extends Character{
         {
             this.setMP(this.getMP()-8);
             int min = 20+this.getEmpower(), max = 30+2*this.getEmpower();
-            int heal = numGen.nextInt(min, max);
+            int heal = numGen.nextInt(min, max+1);
             this.setHP(this.getHP()+heal);
             System.out.printf("%s: Healed themselves for %d HP!",this.getName(),heal);
         }

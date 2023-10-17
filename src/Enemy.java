@@ -8,7 +8,7 @@ public class Enemy extends Character{
     {
         super(80,0,0,0);
         Random numGen = new Random();
-        this.setSpd(numGen.nextInt(0,50));
+        this.setSpd(numGen.nextInt(0,50+1));
         try {
             generateName();
         }
@@ -28,7 +28,7 @@ public class Enemy extends Character{
         Scanner reader = new Scanner(file);
         Random numGen = new Random();
         String name="";
-        for(int i= 0;i<=numGen.nextInt(0,95);i++)
+        for(int i= 0;i<=numGen.nextInt(0,95+1);i++)
         {
             name = reader.nextLine();
         }
@@ -44,9 +44,9 @@ public class Enemy extends Character{
         Random numGen = new Random();
         for(int i=0;i<2;i++)
         {
-            if(numGen.nextInt(0,100)<50)
+            if(numGen.nextInt(0,100+1)<50)
             {
-                int damage = numGen.nextInt(3,7) - player.getDef();
+                int damage = numGen.nextInt(3,7+1) - player.getDef();
                 if(damage<0) damage=0;
                 int playerHP = player.getHP() - damage;
                 player.setDef(0);

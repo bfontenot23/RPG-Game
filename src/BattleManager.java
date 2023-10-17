@@ -131,7 +131,7 @@ public class BattleManager {
         }
         else if(!order[this.getCurrent()].isFled())
         {
-            if(this.getPlayers().length>1) ((Enemy)order[this.getCurrent()]).attack(this.getPlayers()[numGen.nextInt(0,this.getPlayers().length-1)]);
+            if(this.getPlayers().length>1) ((Enemy)order[this.getCurrent()]).attack(this.getPlayers()[numGen.nextInt(0,this.getPlayers().length)]);
             else ((Enemy)order[this.getCurrent()]).attack(this.getPlayers()[0]);
         }
 

@@ -1,5 +1,5 @@
 public class Character {
-    private int HP,MP,def,spd,order;
+    private int HP,MP,def,spd;
     private String name;
     private boolean fled;
 
@@ -61,11 +61,4 @@ public class Character {
         this.spd = spd;
     }
 
-    public int getOrder() {
-        return order;
-    }
-
-    public void setOrder(int order) {
-        this.order = order;
-    }
 }
